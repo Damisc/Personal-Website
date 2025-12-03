@@ -1,0 +1,13 @@
+    h1 {
+        color: aqua;
+    }
+    button:hover {
+        background-color: blue;
+        cursor: pointer;
+        font-size: 30px;
+    }
+    title{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
