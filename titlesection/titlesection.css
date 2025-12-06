@@ -1,6 +1,6 @@
 :root{
     --titleSectionPrimaryColor: white;
-    --titleSectionSecondaryColor: rgb(202, 145, 230)
+    --titleSectionSecondaryColor: #6D96AE;
 }
 
 
@@ -8,7 +8,7 @@
     color: var(--titleSectionPrimaryColor);
     text-align: center;
     padding-top: 200px;
-    background-image: url("../images/webArt.jpg");
+    background-image: url("../images/liveAr.jpg");
     background-position: center top;
 }
 
