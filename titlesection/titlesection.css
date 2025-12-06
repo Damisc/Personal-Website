@@ -1,14 +1,28 @@
+:root{
+    --titleSectionPrimaryColor: white;
+}
+
+
 h1 {
-    color: aqua;
+    color: var(--titleSectionPrimaryColor);
 }
-button:hover {
-    background-color: blue;
-    cursor: pointer;
-    font-size: 30px;
-}
+
 #title{
+    color: (--titleSectionPrimaryColor);
     text-align: center;
     padding-top: 200px;
     background-image: url("../images/webArt.jpg");
     background-position: center top;
+}
+
+.title-section-button{
+    color: var(--titleSectionPrimaryColor);
+    border: solid var(--titleSectionPrimaryColor) 1px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    background-color: transparent;
+}
+button:hover {
+    background-color: blue;
+    cursor: pointer;
 }
