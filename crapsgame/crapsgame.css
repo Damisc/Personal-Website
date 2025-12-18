@@ -6,14 +6,14 @@
 
 .craps-game-title {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .craps-game-container {
-    width: min(50vw, 300px);
-    height: min(37vw, 300px);
+    width: min(70vw, 600px);
+    height: min(57vw, 450px);
     border: solid white 2px;
-    margin: 100px auto 0 auto;
+    margin: 40px auto 0 auto;
     background-image: url("../images/craps-table.jpg");
     background-position: center top;
     background-size: cover;
@@ -49,4 +49,14 @@
 #craps-main-section {
     display: none;
     
+}
+
+.craps-main-section-stats {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#craps-stats-money-container {
+    font-size: 30px;
+    margin: 15px 0 5px 0;
 }
