@@ -1,26 +1,39 @@
-#craps-game {
-    background-image: url("../images/casino.jpg");
-    color: white;
-    background-position: center;
+
+:root {
+    --width-scale: min(70vw, 600px, 80vh);
+    --height-scale: calc(var(--width-scale) * 0.714);
+    --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
+    --title-margin-bottom: calc(var(--height-scale) * 0.25);
 }
 
+#craps-game {
+    background-image: url("../images/casino.jpg");
+    background-position: center top;
+    color: white;
+    padding: 1px;
+}
+
+
 .craps-game-title {
+    font-size: var(--game-title-size);
     text-align: center;
-    margin-top: 40px;
+    margin-top: calc(calc(100vh - var(--game-title-size) - var(--title-margin-bottom) - var(--height-scale)) / 2);
+    margin-bottom: var(--title-margin-bottom);
+
 }
 
 .craps-game-container {
-    width: min(70vw, 600px);
-    height: min(57vw, 450px);
+    width: var(--width-scale);
+    height: var(--height-scale);
     border: solid white 2px;
-    margin: 40px auto 0 auto;
+    margin: 0 auto;
     background-image: url("../images/craps-table.jpg");
     background-position: center top;
     background-size: cover;
 }
 
 #craps-registration-pane {
-    margin-top: 25px;
+    margin-top: 55px;
     text-align: center;
 }
 
