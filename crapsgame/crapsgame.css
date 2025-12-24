@@ -1,6 +1,6 @@
 
 :root {
-    --width-scale: min(70vw, 600px, 80vh);
+    --width-scale: min( 600px, 70vw, 80vh);
     --height-scale: calc(var(--width-scale) * 0.714);
     --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
     --title-margin-bottom: calc(var(--height-scale) * 0.25);
@@ -92,6 +92,11 @@
 .craps-roll-dice-container {
     width: fit-content;
     margin: 0 auto;
+}
+
+#craps-roll-dice-animation-container {
+    margin-top: calc(var(--height-scale) * -0.16);
+    margin-left: calc(var(--height-scale) * -0.14);
 }
 
 .craps-roll-dice-container:hover {

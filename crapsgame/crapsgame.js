@@ -20,7 +20,7 @@ const crapsStatMoney = "craps-stats-money"
 const crapsStatRound = "craps-stats-rounds"
 const crapsUserBetAmount = "craps-user-bet-amount"
 const crapsRollDiceButton = "craps-roll-dice-button"
-const crapsRolllDiceAnimation = "craps-roll-dice-animation-container"
+const crapsRolllDiceAnimationContainer = "craps-roll-dice-animation-container"
 
 // in-game variables
 let currentRounds = startingRound
@@ -98,9 +98,19 @@ function setBetAmount (betAmount) {
 }
 
 function rollDice() {
+    formatDiceScale()
     document.getElementById(crapsRollDiceButton).style.display = "none"
-    const diceRollElement = document.getElementById(crapsRolllDiceAnimation)
+    const diceRollElement = document.getElementById(crapsRolllDiceAnimationContainer)
     rollADie({element: diceRollElement, numberOfDice: 2, callback: processDiceResult, delay: 1000000});
+}
+
+function formatDiceScale() {
+    const vw = window.innerWidth * 0.7
+    const vh = window.innerHeight * 0.8
+    const widthScale = Math.min(600, vw, vh)
+    const heightScale = widthScale * 0.71
+    const scale = heightScale / 454.6457
+    document.getElementById(crapsRolllDiceAnimationContainer).style.transform = "scale(" + scale + ")"
 }
 
 function processDiceResult(diceResult) {
