@@ -50,13 +50,25 @@ function removeRegistrationPane() {
     document.getElementById(registrationPane).style.display = "none"
 }
 
+function showRegistrationPane() {
+    document.getElementById(registrationPane).style.display = "block"
+}
+
 function showMainGameSection() {
     document.getElementById(mainSection).style.display = "block";
 }
 
+function hideMainGameSection() {
+    document.getElementById(mainSection).style.display = "none";
+}
+
 function setupFirstRound() {
+    document.getElementById(crapsRolllDiceAnimationContainer).style.display = "none"
     document.getElementById(crapsRoundFinishGridContainer).style.display = "none"
+    document.getElementById(crapsRollDiceButton).style.display = "block"
+    document.getElementById(crapsBettingGridContainer).style.display = "block"
     document.getElementById(crapsStatUsername).innerHTML = crapsUsername 
+    canChangeBet = true
     setMoney(startingMoney)
     setRound(startingRound)
     betEven()
@@ -110,6 +122,7 @@ function setBetAmount (betAmount) {
 function rollDice() {
     canChangeBet = false
     formatDiceScale()
+    document.getElementById(crapsRolllDiceAnimationContainer).style.display = "block"
     document.getElementById(crapsRollDiceButton).style.display = "none"
     const diceRollElement = document.getElementById(crapsRolllDiceAnimationContainer)
     rollADie({element: diceRollElement, numberOfDice: 2, callback: delayedProcessDiceResult, delay: 1000000});
@@ -156,4 +169,11 @@ function processDiceResult(diceResult) {
     document.getElementById(crapsBettingGridContainer).style.display = "none"
     document.getElementById(crapsRoundFinishGridContainer).style.display = "block"
     document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage
+}
+
+function exitGame() {
+    alert("After playing " + currentRounds + " rounds, you leave with $" + currentMoney)
+    hideMainGameSection()
+    showRegistrationPane()
+    document.getElementById(usernameInput).value = ""
 }
