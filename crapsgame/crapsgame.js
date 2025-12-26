@@ -24,6 +24,8 @@ const crapsRolllDiceAnimationContainer = "craps-roll-dice-animation-container"
 const crapsBettingGridContainer = "craps-betting-grid-container"
 const crapsRoundFinishGridContainer = "craps-round-finish-grid-container"
 const crapsRoundFinishMessage = "craps-round-finish-message"
+const crapsNextRoundButtonDisabled = "craps-next-round-button-disabled"
+const crapsNextRoundButton = "craps-next-round-button"
 
 // in-game variables
 let currentRounds = startingRound
@@ -64,6 +66,8 @@ function hideMainGameSection() {
 
 function setupFirstRound() {
     document.getElementById(crapsStatUsername).innerHTML = crapsUsername 
+    document.getElementById(crapsNextRoundButtonDisabled).style.display = "none"
+    document.getElementById(crapsNextRoundButton).style.display = "block"
     setMoney(startingMoney)
     setRound(startingRound)
     betEven()
@@ -155,7 +159,6 @@ function processDiceResult(diceResult) {
         diceSumResult = bets.even
     }
 
-
     setRound(currentRounds + 1)
     let roundFinishMessage = ""
     if (diceSumResult === currentBet) {
@@ -170,6 +173,8 @@ function processDiceResult(diceResult) {
 
     if (currentMoney === 0) {
         roundFinishMessage = "YOU'RE OUT!"
+        document.getElementById(crapsNextRoundButtonDisabled).style.display = "block"
+        document.getElementById(crapsNextRoundButton).style.display = "none"
     }
     document.getElementById(crapsBettingGridContainer).style.display = "none"
     document.getElementById(crapsRoundFinishGridContainer).style.display = "block"
