@@ -1,3 +1,4 @@
+
 // craps main data
 let crapsUsername = ""
 
@@ -207,3 +208,4 @@ function exitGame() {
     document.getElementById(usernameInput).value = ""
 
 }
+
