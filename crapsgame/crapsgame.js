@@ -184,11 +184,9 @@ function processDiceResult(diceResult) {
     let roundFinishMessage = ""
     if (diceSumResult === currentBet) {
         roundFinishMessage = "YOU WIN"
-        alert("YOU WIN")
         setMoney(currentMoney + currentBetAmount)
     } else {
         roundFinishMessage = "YOU LOSE"
-        alert("YOU LOSE")
         setMoney(currentMoney - currentBetAmount)
     }
 
@@ -207,4 +205,5 @@ function exitGame() {
     hideMainGameSection()
     showRegistrationPane()
     document.getElementById(usernameInput).value = ""
+
 }
