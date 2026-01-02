@@ -172,6 +172,7 @@ function delayedProcessDiceResult(diceResult) {
      
 }
 
+// Function to process the dice result
 function processDiceResult(diceResult) {
     const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
     let diceSumResult = bets.odd
