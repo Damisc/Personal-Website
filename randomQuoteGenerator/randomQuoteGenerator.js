@@ -1,3 +1,4 @@
+const RandomQuoteGeneratorElement = document.getElementById("random-quote-generator")
 const colors = [
     ["#0F172A"  ,  "#F8FAFC"],
     ["#2563EB"  ,  "#E0F2FE"],
@@ -26,18 +27,21 @@ function getRandomColorCombo() {
     return colors[randomIndex]
 }
 
+
 async function getNewRandomQuote() {
-    const response = await fetch("https://api.allorigins.win/raw?url=https://zenquotes.io/api/random")
+    const response = await fetch("https://thequoteshub.com/api/?format=json")
     if (!response.ok) {
-        alert("There was a problem loading a new quote.");
+        alert("There was a problem getting a new quote!")
     }
     const data = await response.json()
 
-    const quoteText = data[0].q
-    const quoteAuthor = data[0].a
+    const quoteText = data.text
+    const quoteAuthor = data.author
+
     document.getElementById("random-quote-text").innerHTML = quoteText
     document.getElementById("random-quote-author").innerHTML = quoteAuthor
 
     const colorCombo = getRandomColorCombo()
-    document.getElementById("random-quote-generator").style.background = "linear-gradient(45deg, " + colorCombo[0] + " , " + colorCombo[1] + ")"
-}
+    RandomQuoteGeneratorElement.style.background = "linear-gradient(45deg, " + colorCombo[0] + " , " + colorCombo[1] + ")"
+  }
+

@@ -4,13 +4,13 @@
 }
 
 #random-quote-title {
-    margin: 30vh 0 10vh 0;
+    margin: 20vh 0 10vh 0;
     font-size: 5vh;
 }
 
 #random-quote-text {
     font-size: 3vh;
-    width: 60vh;
+    width: 95vh;
     margin: 0 auto
 }
 
@@ -21,7 +21,7 @@
 }
 
 #new-random-quote {
-    font-size: 2vh;
+    font-size: 3vh;
 }
 
 #new-random-quote:hover {
