@@ -2,6 +2,7 @@ import { useState } from "react"
 import { analyzeStock, VerticalAlignContainer, VerticalAlignContent } from "./stockAnalysisDashboard"
 import { Oval } from "react-loader-spinner"
 import "./stockAnalysisDashboard.css"
+import DashboardGrid from "./DashboardGrid"
 
 function StockAnalysisDashboard() {
 
@@ -30,12 +31,16 @@ function StockAnalysisDashboard() {
 
     if (gotData) {
         return (
-            <div>
-                <div onClick={() => goBack()}>BACK</div>
-                <div>
-                    {JSON.stringify(stockData)}
-                </div>
-            </div>
+            <VerticalAlignContainer>
+                <VerticalAlignContent>
+                    <div onClick={() => goBack()}>BACK</div>
+                    <div>
+                        <DashboardGrid
+                            stockData={stockData}
+                        ></DashboardGrid>
+                    </div>
+                </VerticalAlignContent>
+            </VerticalAlignContainer>
         )
     }
 
