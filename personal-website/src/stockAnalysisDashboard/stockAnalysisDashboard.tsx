@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { analyzeStock, VerticalAlignContainer, VerticalAlignContent } from "./stockAnalysisDashboard"
+import { analyzeStock, VerticalAlignContainer, VerticalAlignContent, DashboardGridContainer } from "./stockAnalysisDashboard"
 import { Oval } from "react-loader-spinner"
 import "./stockAnalysisDashboard.css"
 import DashboardGrid from "./DashboardGrid"
@@ -33,12 +33,14 @@ function StockAnalysisDashboard() {
         return (
             <VerticalAlignContainer>
                 <VerticalAlignContent>
-                    <div onClick={() => goBack()}>BACK</div>
-                    <div>
-                        <DashboardGrid
-                            stockData={stockData}
-                        ></DashboardGrid>
-                    </div>
+                    <DashboardGridContainer>
+                        <div onClick={() => goBack()}>BACK</div>
+                        <div>
+                            <DashboardGrid
+                                stockData={stockData}
+                            ></DashboardGrid>
+                        </div>
+                    </DashboardGridContainer>
                 </VerticalAlignContent>
             </VerticalAlignContainer>
         )
