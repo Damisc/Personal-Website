@@ -86,7 +86,7 @@ function DashboardGrid({stockData}:{stockData:any}) {
             <div className="grid-stack-item" gs-w="3" gs-h="2">
                 <DashboardGridContent className="grid-stack-item-content">
                     <img 
-                        src={`data:image/png;base64,${stockData.newsTextAnalysis.data.wordCloud}`}
+                        src={`data:image/png;base64,${stockData.newsTextAnalysis.data.wordCloudImage}`}
                         style={{height: "100%", width: "100%"}}
                     ></img>
                 </DashboardGridContent>
