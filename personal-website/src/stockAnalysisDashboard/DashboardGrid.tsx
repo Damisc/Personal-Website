@@ -5,6 +5,7 @@ import { DashboardGridContent } from "./stockAnalysisDashboard"
 import NumberStat from "./numberStat"
 import LineChartContent from "./lineChartContent"
 import NewsLinksList from "./newsLink"
+import NewsSentimentAnalysis from "./newsSentimentAnalysis"
 
 function DashboardGrid({stockData}:{stockData:any}) {
     useEffect(() => {
@@ -75,12 +76,14 @@ function DashboardGrid({stockData}:{stockData:any}) {
                     ></NewsLinksList>
                 </DashboardGridContent>
             </div>
-            {/* <div className="grid-stack-item" gs-w="4" gs-h="2">
+            <div className="grid-stack-item" gs-w="4" gs-h="2">
                 <DashboardGridContent className="grid-stack-item-content">
-                    News Sentiment Analysis
+                    <NewsSentimentAnalysis
+                        newsTextAnalysis={stockData.newsTextAnalysis}
+                    ></NewsSentimentAnalysis>
                 </DashboardGridContent>
             </div>
-            <div className="grid-stack-item" gs-w="3" gs-h="2">
+            {/* <div className="grid-stack-item" gs-w="3" gs-h="2">
                 <DashboardGridContent className="grid-stack-item-content">
                     WordCloud
                 </DashboardGridContent>
